@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RFQ Creation</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align:center;
+    color:#003366;
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input, textarea, select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    background:#007bff;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.preview{
+    margin-top:20px;
+    background:#eef5ff;
+    padding:15px;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>RFQ Creation Form</h2>
+
+<div class="form-group">
+<label>RFQ Title</label>
+<input type="text" id="title" placeholder="Enter RFQ Title">
+</div>
+
+<div class="form-group">
+<label>Product / Service Details</label>
+<textarea id="details" rows="4" placeholder="Describe product or service"></textarea>
+</div>
+
+<div class="form-group">
+<label>Quantity</label>
+<input type="number" id="quantity" min="1">
+</div>
+
+<div class="form-group">
+<label>Attachment</label>
+<input type="file" id="attachment">
+</div>
+
+<div class="form-group">
+<label>Submission Deadline</label>
+<input type="date" id="deadline">
+</div>
+
+<div class="form-group">
+<label>Assign Vendor</label>
+<select id="vendor">
+<option>Select Vendor</option>
+<option>ABC Technologies</option>
+<option>XYZ Suppliers</option>
+<option>PQR Services</option>
+<option>Global Traders</option>
+</select>
+</div>
+
+<button onclick="createRFQ()">Create RFQ</button>
+
+<div id="preview" class="preview" style="display:none;">
+<h3>RFQ Summary</h3>
+<p id="rfqData"></p>
+</div>
+
+</div>
+
+<script>
+
+function createRFQ(){
+
+let title = document.getElementById("title").value;
+let details = document.getElementById("details").value;
+let quantity = document.getElementById("quantity").value;
+let deadline = document.getElementById("deadline").value;
+let vendor = document.getElementById("vendor").value;
+
+document.getElementById("preview").style.display="block";
+
+document.getElementById("rfqData").innerHTML=
+"<b>RFQ Title:</b> " + title + "<br><br>" +
+"<b>Details:</b> " + details + "<br><br>" +
+"<b>Quantity:</b> " + quantity + "<br><br>" +
+"<b>Deadline:</b> " + deadline + "<br><br>" +
+"<b>Assigned Vendor:</b> " + vendor;
+}
+
+</script>
+
+</body>
+</html>
