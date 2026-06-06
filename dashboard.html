@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Procurement Dashboard</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f4f6f9;
+    }
+
+    /* HEADER */
+    .header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    /* CONTAINER */
+    .container {
+      padding: 20px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #3498db;
+    }
+
+    /* SECTIONS */
+    .section {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .section h3 {
+      margin-bottom: 10px;
+    }
+
+    /* LIST */
+    ul {
+      padding-left: 20px;
+    }
+
+    /* BUTTONS */
+    .actions {
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 15px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    Procurement Dashboard
+  </div>
+
+  <div class="container">
+
+    <!-- ANALYTICS CARDS -->
+    <div class="cards">
+      <div class="card">
+        <h2 id="rfqCount">5</h2>
+        <p>Active RFQs</p>
+      </div>
+
+      <div class="card">
+        <h2 id="approvalCount">3</h2>
+        <p>Pending Approvals</p>
+      </div>
+
+      <div class="card">
+        <h2 id="poCount">7</h2>
+        <p>Purchase Orders</p>
+      </div>
+
+      <div class="card">
+        <h2 id="invoiceCount">4</h2>
+        <p>Invoices</p>
+      </div>
+    </div>
+
+    <!-- PENDING APPROVALS -->
+    <div class="section">
+      <h3>Pending Approvals</h3>
+      <ul>
+        <li>RFQ #101 - Waiting Manager Approval</li>
+        <li>PO #202 - Waiting Admin Approval</li>
+        <li>Invoice #303 - Waiting Finance Approval</li>
+      </ul>
+    </div>
+
+    <!-- ACTIVE RFQs -->
+    <div class="section">
+      <h3>Active RFQs</h3>
+      <ul>
+        <li>RFQ #105 - Vendor A</li>
+        <li>RFQ #106 - Vendor B</li>
+      </ul>
+    </div>
+
+    <!-- PURCHASE ORDERS -->
+    <div class="section">
+      <h3>Recent Purchase Orders</h3>
+      <ul>
+        <li>PO #2001 - Approved</li>
+        <li>PO #2002 - Pending</li>
+      </ul>
+    </div>
+
+    <!-- INVOICES -->
+    <div class="section">
+      <h3>Recent Invoices</h3>
+      <ul>
+        <li>INV #5001 - Paid</li>
+        <li>INV #5002 - Pending</li>
+      </ul>
+    </div>
+
+    <!-- QUICK ACTION BUTTONS -->
+    <div class="actions">
+      <button class="btn" onclick="createRFQ()">Create RFQ</button>
+      <button class="btn" onclick="createPO()">Create PO</button>
+      <button class="btn" onclick="viewReports()">View Reports</button>
+    </div>
+
+  </div>
+
+  <script>
+    function createRFQ() {
+      alert("Redirect to Create RFQ Page");
+    }
+
+    function createPO() {
+      alert("Redirect to Create PO Page");
+    }
+
+    function viewReports() {
+      alert("Opening Reports Dashboard");
+    }
+  </script>
+
+</body>
+</html>
