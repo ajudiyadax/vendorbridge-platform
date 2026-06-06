@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reports & Analytics</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+}
+
+/* Header */
+.header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.export-btn {
+    background: #27ae60;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Vendor Performance */
+.vendor {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #3498db;
+    border-radius: 5px;
+}
+
+/* Stats */
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.stat-box p {
+    color: gray;
+}
+
+/* Spending */
+.spending {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+/* Graph (Fake Bar Chart) */
+.chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    height: 200px;
+}
+
+.bar {
+    width: 30px;
+    background: #3498db;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+}
+
+.month {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    Reports & Analytics
+    <div class="export-btn">Export Report</div>
+</div>
+
+<div class="container">
+
+    <!-- Vendor Performance -->
+    <div class="card">
+        <h3>Vendor Performance</h3>
+
+        <div class="vendor">
+            Vendor A <span>90%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+
+        <div class="vendor">
+            Vendor B <span>75%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+
+        <div class="vendor">
+            Vendor C <span>60%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid">
+        <div class="card stat-box">
+            <h2>120</h2>
+            <p>Total RFQs</p>
+        </div>
+
+        <div class="card stat-box">
+            <h2>45</h2>
+            <p>Approved Orders</p>
+        </div>
+
+        <div class="card stat-box">
+            <h2>₹2.5L</h2>
+            <p>Total Spending</p>
+        </div>
+
+        <div class="card stat-box">
+            <h2>12</h2>
+            <p>Active Vendors</p>
+        </div>
+    </div>
+
+    <!-- Spending Summary -->
+    <div class="card">
+        <h3>Spending Summary</h3>
+
+        <div class="spending">
+            Raw Materials <span>₹1.2L</span>
+        </div>
+
+        <div class="spending">
+            Logistics <span>₹80K</span>
+        </div>
+
+        <div class="spending">
+            Services <span>₹50K</span>
+        </div>
+    </div>
+
+    <!-- Monthly Trends -->
+    <div class="card">
+        <h3>Monthly Procurement Trends</h3>
+
+        <div class="chart">
+            <div>
+                <div class="bar" style="height:120px;"></div>
+                <div class="month">Jan</div>
+            </div>
+            <div>
+                <div class="bar" style="height:150px;"></div>
+                <div class="month">Feb</div>
+            </div>
+            <div>
+                <div class="bar" style="height:100px;"></div>
+                <div class="month">Mar</div>
+            </div>
+            <div>
+                <div class="bar" style="height:180px;"></div>
+                <div class="month">Apr</div>
+            </div>
+            <div>
+                <div class="bar" style="height:140px;"></div>
+                <div class="month">May</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
