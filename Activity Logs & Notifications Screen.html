@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Activity Logs & Notifications</title>
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+  padding: 30px;
+}
+
+/* HEADER */
+.header {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.card h3 {
+  margin-bottom: 15px;
+}
+
+/* NOTIFICATIONS */
+.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #f9fafb;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+}
+
+.rfq { background: #3b82f6; }
+.approval { background: #22c55e; }
+.invoice { background: #f59e0b; }
+
+.text {
+  flex: 1;
+}
+
+.text p {
+  font-size: 14px;
+}
+
+.time {
+  font-size: 12px;
+  color: #777;
+}
+
+/* TIMELINE */
+.timeline {
+  border-left: 3px solid #2563eb;
+  padding-left: 15px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -21px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: #2563eb;
+  border-radius: 50%;
+}
+
+.timeline-title {
+  font-weight: 600;
+}
+
+.timeline-desc {
+  font-size: 13px;
+  color: #555;
+}
+
+.timeline-time {
+  font-size: 12px;
+  color: #888;
+}
+
+/* AUDIT LOG TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+}
+
+th {
+  background: #f3f4f6;
+}
+
+tr {
+  border-bottom: 1px solid #eee;
+}
+
+/* BADGES */
+.badge {
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.success { background: #dcfce7; color: #166534; }
+.warning { background: #fef3c7; color: #92400e; }
+.danger { background: #fee2e2; color: #991b1b; }
+
+</style>
+</head>
+
+<body>
+
+<div class="header">Activity Logs & Notifications</div>
+
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="card">
+    <h3>Notifications</h3>
+
+    <div class="notification">
+      <div class="icon rfq">R</div>
+      <div class="text">
+        <p>New RFQ created for Office Supplies</p>
+        <div class="time">2 mins ago</div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="icon approval">A</div>
+      <div class="text">
+        <p>Quotation approved by Manager</p>
+        <div class="time">10 mins ago</div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="icon invoice">I</div>
+      <div class="text">
+        <p>Invoice #INV203 uploaded</p>
+        <div class="time">30 mins ago</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="card">
+    <h3>Activity Timeline</h3>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-title">RFQ Created</div>
+        <div class="timeline-desc">RFQ #102 created by Admin</div>
+        <div class="timeline-time">Today, 9:00 AM</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-title">Vendor Submitted Quotation</div>
+        <div class="timeline-desc">ABC Traders submitted pricing</div>
+        <div class="timeline-time">Today, 10:00 AM</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-title">Approval Pending</div>
+        <div class="timeline-desc">Waiting for Manager approval</div>
+        <div class="timeline-time">Now</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- AUDIT LOG -->
+<div class="card" style="margin-top:20px;">
+  <h3>Audit Logs</h3>
+
+  <table>
+    <tr>
+      <th>User</th>
+      <th>Action</th>
+      <th>Status</th>
+      <th>Time</th>
+    </tr>
+
+    <tr>
+      <td>Admin</td>
+      <td>Created RFQ</td>
+      <td><span class="badge success">Success</span></td>
+      <td>09:00 AM</td>
+    </tr>
+
+    <tr>
+      <td>Vendor</td>
+      <td>Submitted Quotation</td>
+      <td><span class="badge warning">Pending</span></td>
+      <td>10:00 AM</td>
+    </tr>
+
+    <tr>
+      <td>Manager</td>
+      <td>Approval Action</td>
+      <td><span class="badge danger">Rejected</span></td>
+      <td>11:00 AM</td>
+    </tr>
+
+  </table>
+
+</div>
+
+</body>
+</html>
