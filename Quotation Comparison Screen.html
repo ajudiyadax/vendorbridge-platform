@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quotation Comparison</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    padding:30px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:#1e293b;
+}
+
+.controls{
+    display:flex;
+    gap:10px;
+}
+
+select,input{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+tr:hover{
+    background:#f8fafc;
+}
+
+.lowest-price{
+    background:#dcfce7;
+    color:#15803d;
+    font-weight:bold;
+}
+
+.rating{
+    color:#f59e0b;
+    font-size:18px;
+}
+
+.delivery-fast{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.delivery-medium{
+    color:#f59e0b;
+    font-weight:bold;
+}
+
+.delivery-slow{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+.action-btn{
+    padding:8px 15px;
+    border:none;
+    border-radius:6px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+.action-btn:hover{
+    background:#1d4ed8;
+}
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    color:#64748b;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:24px;
+    font-weight:bold;
+    color:#2563eb;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Quotation Comparison Dashboard</h1>
+
+        <div class="controls">
+            <input type="text" placeholder="Search Vendor">
+            <select>
+                <option>Sort By</option>
+                <option>Lowest Price</option>
+                <option>Highest Rating</option>
+                <option>Fastest Delivery</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary">
+
+        <div class="card">
+            <h3>Total Quotations</h3>
+            <p>5</p>
+        </div>
+
+        <div class="card">
+            <h3>Lowest Quote</h3>
+            <p>₹45,000</p>
+        </div>
+
+        <div class="card">
+            <h3>Best Rated Vendor</h3>
+            <p>Vendor C</p>
+        </div>
+
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="table-container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Vendor</th>
+                    <th>Quoted Price</th>
+                    <th>Delivery Time</th>
+                    <th>Vendor Rating</th>
+                    <th>Warranty</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Vendor A</td>
+                    <td>₹52,000</td>
+                    <td class="delivery-medium">7 Days</td>
+                    <td class="rating">★★★★☆</td>
+                    <td>1 Year</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+
+                <tr>
+                    <td>Vendor B</td>
+                    <td class="lowest-price">₹45,000 ✔</td>
+                    <td class="delivery-fast">4 Days</td>
+                    <td class="rating">★★★★☆</td>
+                    <td>2 Years</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+
+                <tr>
+                    <td>Vendor C</td>
+                    <td>₹48,500</td>
+                    <td class="delivery-fast">3 Days</td>
+                    <td class="rating">★★★★★</td>
+                    <td>2 Years</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+
+                <tr>
+                    <td>Vendor D</td>
+                    <td>₹55,000</td>
+                    <td class="delivery-slow">10 Days</td>
+                    <td class="rating">★★★☆☆</td>
+                    <td>1 Year</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+
+                <tr>
+                    <td>Vendor E</td>
+                    <td>₹50,000</td>
+                    <td class="delivery-medium">6 Days</td>
+                    <td class="rating">★★★★☆</td>
+                    <td>18 Months</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
