@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vendor Quotation Pro</title>
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  display: flex;
+  background: #0f172a;
+  color: #1e293b;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1e293b, #020617);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #334155;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* HEADER */
+.topbar {
+  background: rgba(255,255,255,0.05);
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  height: 80px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+tr {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* STATUS */
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.submitted {
+  background: #22c55e;
+}
+
+.pending {
+  background: #f59e0b;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>Vendor Panel</h2>
+  <ul>
+    <li>Dashboard</li>
+    <li>RFQs</li>
+    <li style="background:#334155;">Quotations</li>
+    <li>Orders</li>
+    <li>Invoices</li>
+  </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="topbar">
+    Vendor Quotation Submission
+  </div>
+
+  <div class="grid">
+
+    <!-- FORM -->
+    <div class="card">
+      <h3>Submit Quotation</h3>
+
+      <div class="form-group">
+        <label>Vendor Name</label>
+        <input type="text" placeholder="ABC Traders">
+      </div>
+
+      <div class="form-group">
+        <label>RFQ ID</label>
+        <input type="text" placeholder="#RFQ102">
+      </div>
+
+      <div class="form-group">
+        <label>Price (₹)</label>
+        <input type="number">
+      </div>
+
+      <div class="form-group">
+        <label>Delivery Timeline</label>
+        <input type="text" placeholder="5 days">
+      </div>
+
+      <div class="form-group">
+        <label>Notes</label>
+        <textarea></textarea>
+      </div>
+
+      <button class="btn">Submit</button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="card">
+      <h3>Recent Quotations</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>RFQ</th>
+            <th>Price</th>
+            <th>Delivery</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>ABC Traders</td>
+            <td>#101</td>
+            <td>₹15,000</td>
+            <td>5 days</td>
+            <td><span class="status submitted">Submitted</span></td>
+          </tr>
+
+          <tr>
+            <td>XYZ Pvt Ltd</td>
+            <td>#102</td>
+            <td>₹12,500</td>
+            <td>7 days</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
